@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class A : MonoBehaviour
 {
-    int lv = 1;
+    float lv = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,10 @@ public class A : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2( Input.GetAxis("Horizontal"),0);
+        Vector2 v = transform.position;
+        lv+= Input.GetAxis("Horizontal");
+        v.x = lv; 
+
 
 
     }
